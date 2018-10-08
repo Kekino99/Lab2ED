@@ -39,4 +39,29 @@ public class Task {
         }
         return result;
     }
+
+    public static <E extends Comparable<? super E>> void copyWithRange(List<? extends E> trg, List<? super E> src,
+                                                                       E max, E min) {
+        Iterator<? extends E> trgit = trg.iterator();
+        ListIterator<? super E> srcit = src.listIterator();
+        while(trgit.hasNext() && srcit.hasNext()) {
+            E elem = trgit.next();
+            if (min.compareTo(elem) <= 0 && elem.compareTo(max) < 0) {
+                srcit.next();
+                srcit.set(elem);
+            }
+        }
+    }
+
+    public static <E> void copyWithTange(Comparator<E> comp, List<? extends E> trg, List<? super E> src, E min, E max) {
+        Iterator<? extends E> trgit = trg.iterator();
+        ListIterator<? super E> srcit = src.listIterator();
+        while(trgit.hasNext() && srcit.hasNext()) {
+            E elem = trgit.next();
+            if (comp.compare(min, elem) <= 0 && comp.compare(elem, max) < 0) {
+                srcit.next();
+                srcit.set(elem);
+            }
+        }
+    }
 }
