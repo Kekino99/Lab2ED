@@ -4,7 +4,7 @@ public class Task {
 
 
     public static List<Integer> withinRange(List<Integer> l, int max, int min) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
         Iterator<Integer> it = l.iterator();
         while (it.hasNext()) {
             int nombre = it.next();
@@ -16,7 +16,7 @@ public class Task {
     }
 
     public static <E extends Comparable<? super E>> List<E> withinRange(List<E> l, E max, E min) {
-        List<E> result = new ArrayList<E>();
+        List<E> result = new ArrayList<>();
         Iterator<E> it = l.iterator();
         while (it.hasNext()) {
             E elem = it.next();
@@ -29,7 +29,7 @@ public class Task {
 
     public static <E> List<E> withinTange(Comparator<E> comp, List<E> l, E max, E min) {
         /* Hi ha errors */
-        List<E> result = new ArrayList<E>();
+        List<E> result = new ArrayList<>();
         Iterator<E> it = l.iterator();
         while (it.hasNext()) {
             E elem = it.next();

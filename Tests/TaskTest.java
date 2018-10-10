@@ -14,7 +14,7 @@ public class TaskTest {
 
     @org.junit.Test
     public void testWithinRange() {
-        List<Integer> list2 = new ArrayList<Integer>();
+        List<Integer> list2 = new ArrayList<>();
         for(int i = 0; i<10; i++) {
             list2.add(i);
         }
@@ -32,16 +32,16 @@ public class TaskTest {
 
     @org.junit.Test
     public void testWithinTange() {
-        assertEquals(Arrays.asList(3L, 4L, 5L), Task.withinTange((Comparator<Long>) (d1, d2) -> d1.compareTo(d2),
+        assertEquals(Arrays.asList(3L, 4L, 5L), Task.withinTange(Comparator.naturalOrder(),
                 list1, 6L, 3L));
-        assertEquals(Collections.emptyList(), Task.withinTange((Comparator<Long>) (d1, d2) -> d1.compareTo(d2),
+        assertEquals(Collections.emptyList(), Task.withinTange(Comparator.naturalOrder(),
                 list1, 1L, 2L));
     }
 
     @org.junit.Test
     public void testCopyWithRange() {
-        List<Long> list3 = new ArrayList<Long>();
-        Task.copyWithRange(list1, list3, 1L, 2l);
+        List<Long> list3 = new ArrayList<>();
+        Task.copyWithRange(list1, list3, 1L, 2L);
         assertEquals(Collections.emptyList(), list3);
         Task.copyWithRange(list1, list3, 5L, 2L);
         assertEquals(Arrays.asList(2L, 3L, 4L), list3);
@@ -52,13 +52,13 @@ public class TaskTest {
 
     @org.junit.Test
     public void testCopyWithTange() {
-        List<Long> list3 = new ArrayList<Long>();
-        Task.copyWithTange((Comparator<Long>) (d1, d2) -> d1.compareTo(d2), list1, list3, 1L, 2L);
+        List<Long> list3 = new ArrayList<>();
+        Task.copyWithTange(Comparator.naturalOrder(), list1, list3, 1L, 2L);
         assertEquals(Collections.emptyList(), list3);
-        Task.copyWithTange((Comparator<Long>) (d1, d2) -> d1.compareTo(d2), list1, list3, 5L, 2L);
+        Task.copyWithTange(Comparator.naturalOrder(), list1, list3, 5L, 2L);
         assertEquals(Arrays.asList(2L, 3L, 4L), list3);
         list3 = Arrays.asList(10L, 11L, 12L, 13L, 14L);
-        Task.copyWithTange((Comparator<Long>) (d1, d2) -> d1.compareTo(d2), list1, list3, 5L, 2L);
+        Task.copyWithTange(Comparator.naturalOrder(), list1, list3, 5L, 2L);
         assertEquals(Arrays.asList(2L, 3L, 4L, 13L, 14L), list3);
 
     }
