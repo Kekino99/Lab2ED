@@ -1,3 +1,5 @@
+package task;
+
 import java.util.*;
 
 public class Task {
@@ -28,7 +30,6 @@ public class Task {
     }
 
     public static <E> List<E> withinTange(Comparator<E> comp, List<E> l, E max, E min) {
-        /* Hi ha errors */
         List<E> result = new ArrayList<>();
         Iterator<E> it = l.iterator();
         while (it.hasNext()) {
