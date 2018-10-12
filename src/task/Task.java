@@ -1,5 +1,7 @@
 package task;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 
 public class Task {
@@ -17,7 +19,7 @@ public class Task {
         return result;
     }
 
-    public static <E extends Comparable<? super E>> List<E> withinRange(List<? extends E> l, E max, E min) {
+    public static <E extends Comparable<? super E>> List<E> withinRange(@NotNull List<? extends E> l, E max, E min) {
         List<E> result = new ArrayList<>();
         Iterator<? extends E> it = l.iterator();
         while (it.hasNext()) {
@@ -29,7 +31,7 @@ public class Task {
         return result;
     }
 
-    public static <E> List<E> withinTange(Comparator<? super E> comp, List<? extends E> l, E max, E min) {
+    public static <E> List<E> withinTange(Comparator<? super E> comp, @NotNull List<? extends E> l, E max, E min) {
         List<E> result = new ArrayList<>();
         Iterator<? extends E> it = l.iterator();
         while (it.hasNext()) {
@@ -41,7 +43,7 @@ public class Task {
         return result;
     }
 
-    public static <E extends Comparable<? super E>> void copyWithRange(List<? extends E> src, List<? super E> trg,
+    public static <E extends Comparable<? super E>> void copyWithRange(@NotNull List<? extends E> src, @NotNull List<? super E> trg,
                                                                        E max, E min) {
         Iterator<? extends E> srcit = src.iterator();
         ListIterator<? super E> trgit = trg.listIterator();
@@ -58,7 +60,7 @@ public class Task {
         }
     }
 
-    public static <E> void copyWithTange(Comparator<? super E> comp, List<? extends E> src, List<? super E> trg, E max, E min) {
+    public static <E> void copyWithTange(Comparator<? super E> comp, @NotNull List<? extends E> src, @NotNull List<? super E> trg, E max, E min) {
         Iterator<? extends E> srcit = src.iterator();
         ListIterator<? super E> trgit = trg.listIterator();
         while(srcit.hasNext()) {
