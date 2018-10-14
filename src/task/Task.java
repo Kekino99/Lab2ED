@@ -1,13 +1,14 @@
 package task;
 
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.internal.NotNull;
 
 import java.util.*;
 
 public class Task {
 
-//Comentari per provar el Git. Funciona.
-    public static List<Integer> withinRange(List<Integer> l, int max, int min) {
+    /* * * * Task 1 * * * */
+    //Returns a list of integers between the Max and Min.
+    public static List<Integer> withinRange(@NotNull List<Integer> l, int max, int min) {
         List<Integer> result = new ArrayList<>();
         Iterator<Integer> it = l.iterator();
         while (it.hasNext()) {
@@ -19,6 +20,8 @@ public class Task {
         return result;
     }
 
+    /* * * * Task 2 * * * */
+    //Generic version of withinRange. version 1
     public static <E extends Comparable<? super E>> List<E> withinRange(@NotNull List<? extends E> l, E max, E min) {
         List<E> result = new ArrayList<>();
         Iterator<? extends E> it = l.iterator();
@@ -31,6 +34,7 @@ public class Task {
         return result;
     }
 
+    //Generic version of withinRange. version 2
     public static <E> List<E> withinTange(Comparator<? super E> comp, @NotNull List<? extends E> l, E max, E min) {
         List<E> result = new ArrayList<>();
         Iterator<? extends E> it = l.iterator();
@@ -43,6 +47,8 @@ public class Task {
         return result;
     }
 
+    /* * * * Task 3 * * * */
+    //Copies the elements within max and min from one list to another. Comparable Version
     public static <E extends Comparable<? super E>> void copyWithRange(@NotNull List<? extends E> src, @NotNull List<? super E> trg,
                                                                        E max, E min) {
         Iterator<? extends E> srcit = src.iterator();
@@ -60,6 +66,7 @@ public class Task {
         }
     }
 
+    //Copies the elements within max and min from one list to another. Comparator Version
     public static <E> void copyWithTange(Comparator<? super E> comp, @NotNull List<? extends E> src, @NotNull List<? super E> trg, E max, E min) {
         Iterator<? extends E> srcit = src.iterator();
         ListIterator<? super E> trgit = trg.listIterator();
