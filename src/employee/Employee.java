@@ -1,10 +1,8 @@
 package employee;
 /* * * * * * * *  * * * * * * * * * * * * * * *
 * Hierachy of package employee:
-* Employee --> | Engineer --> Employee
+* Employee --> | Engineer --> TestEngineer
 *              | Admin
-*
-*
 *
 * * * * * * * * * * * * * * * * * * * * * * * */
 public class Employee implements Comparable<Employee> {
@@ -13,6 +11,7 @@ public class Employee implements Comparable<Employee> {
     private int id;
     private String name;
 
+    //Constructor
     public Employee(String name) {
         this.id=numOfEmployees;
         numOfEmployees++;

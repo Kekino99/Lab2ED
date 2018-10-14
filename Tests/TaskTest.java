@@ -29,6 +29,7 @@ public class TaskTest {
     }
 
     @BeforeClass
+    /* * * * Creating the Emplyees * * * */
     public static void initEmployees() {
         employee[0] = new Employee("Ian"); //0
         employee[1] = new Employee("Tere"); //1
