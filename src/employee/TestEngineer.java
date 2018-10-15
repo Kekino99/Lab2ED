@@ -6,16 +6,16 @@ package employee;
  *
  * * * * * * * * * * * * * * * * * * * * * * * */
 public class TestEngineer extends Engineer {
-    private boolean likesPotetoes;
+    private boolean potatoeFan;
 
     //Constructor
-    public TestEngineer(String name, int projectGroupId, boolean likesPotetoes) {
+    public TestEngineer(String name, int projectGroupId, boolean potatoeFan) {
         super(name, projectGroupId);
-        this.likesPotetoes = likesPotetoes;
+        this.potatoeFan = potatoeFan;
     }
 
-    public boolean isLikesPotetoes() {
-        return likesPotetoes;
+    public boolean isPotatoeFan() {
+        return potatoeFan;
     }
 
 }
