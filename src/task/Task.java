@@ -61,7 +61,7 @@ public class Task {
         Iterator<? extends E> it = l.iterator();
         while (it.hasNext()) {
             E elem = it.next();
-            if (comp.compare(min, elem) <= 0 && comp.compare(elem, max) < 0) {
+            if (elem!=null && comp.compare(min, elem) <= 0 && comp.compare(elem, max) < 0) {
                 result.add(elem);
             }
         }
@@ -84,7 +84,7 @@ public class Task {
         ListIterator<? super E> trgit = trg.listIterator();
         while(srcit.hasNext()) {
             E elem = srcit.next();
-            if (min.compareTo(elem) <= 0 && elem.compareTo(max) < 0) {
+            if (elem!=null && min.compareTo(elem) <= 0 && elem.compareTo(max) < 0) {
                 if (trgit.hasNext()) {
                     trgit.next();
                     trgit.set(elem);
@@ -110,7 +110,7 @@ public class Task {
         ListIterator<? super E> trgit = trg.listIterator();
         while(srcit.hasNext()) {
             E elem = srcit.next();
-            if (comp.compare(min, elem) <= 0 && comp.compare(elem, max) < 0) {
+            if (elem!=null && comp.compare(min, elem) <= 0 && comp.compare(elem, max) < 0) {
                 if (trgit.hasNext()) {
                     trgit.next();
                     trgit.set(elem);
