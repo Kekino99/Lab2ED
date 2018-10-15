@@ -69,7 +69,7 @@ public class Task {
     }
 
     /* * * * Task 3 * * * */
-    /**     Generic version of withinRange. Elements must have a super Comparable, or be Comparable themselves
+    /**     Elements must have a super Comparable, or be Comparable themselves
      * @param src readable list of ? witch extends E. Null elements will be ignored, and null lists will cast an
      *          unexpected throw
      * @param trg list that will be overwritten with elements from src. If trg has more elements than src, those final
@@ -95,7 +95,7 @@ public class Task {
         }
     }
 
-    /**     Generic version of withinRange. Elements must have a super Comparable, or be Comparable themselves
+    /**
      * @param comp comparator of the elements. Must be from the elements themselves, or a super class.
      * @param src readable list of ? witch extends E. Null elements will be ignored, and null lists will cast an
      *          unexpected throw

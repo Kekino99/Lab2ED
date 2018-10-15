@@ -12,7 +12,10 @@ public class Employee implements Comparable<Employee> {
     private int id;
     private String name;
 
-    //Constructor
+    /**Constructor of the class
+     *
+     * @param name name of the employee
+     */
     public Employee(String name) {
         this.id=numOfEmployees;
         numOfEmployees++;
